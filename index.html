@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="Directe, Guia, Trencanous">
+<title>Directe-Guia-Trencanous</title>
+
+
+<!--INICI CSS -->
+<style>
+body {
+  background-color: white;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+}
+
+h2 {
+  color: black;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 15px;
+  text-align: center
+}
+
+
+
+
+</style>
+
+
+<!--//FI CSS<-->
+
+
+
+</head>
+
+
+<body>
+
+	<h1> Calculadora Directe-Guia-Trencanous <br>
+	 <img src="Logo_R2_FonsBlanc_15.bmp" alt="Logo aula"> 
+	</h1>
+
+
+
+
+ <!-- Velocitat Directe-->
+	<h2>Velocitat-Directe <br> </h2>
+	<p>
+	<img src="v.jpg" alt="Dibuix Directe" width="250"> 
+	<br> Coneixem vA i &#969AB <br> </p>
+	<p>	vA = (
+	<input id="vxd" type="text" size="3" >  </input> ,
+	<input id="vyd" type="text" size="3" >  </input> , 0) 
+	m/s <br><br>
+	&#969AB = (0, 0, 
+	<input id="wzd" type="text" size="3"> ) </input> rad/s
+	<br><br> rAB = (
+	<input id="rabxd" type="text" size="3"> </input> ,
+	<input id="rabyd" type="text" size="3"> </input> , 0)
+	m <br><br>
+	
+	
+	<button onclick="ExecutaDirecte()" id="accepta_d" >Calcula</button> 
+	</p>
+
+ <!-- Velocitat Guia-->
+    <br><br><br>
+	<h2>Velocitat-Guia<br> </h2>
+	<p>
+	<img src="vt1.jpg" alt="Dibuix Guia" width="250"> 
+	<br> Coneixem vA i l'angle de la guia amb la horitzontal &#952, no coneixem &#969AB <br> </p>
+	<p>	vA = (
+	<input id="vxg" type="text" size="3" >  </input> ,
+	<input id="vyg" type="text" size="3" >  </input> , 0) 
+	m/s <br><br>
+	&#952 =  
+	<input id="ang" type="text" size="3"> 	</input> º
+	<br><br> rAB = (
+	<input id="rabxg" type="text" size="3"> </input> ,
+	<input id="rabyg" type="text" size="3"> </input> , 0)
+	m <br><br>
+
+	
+	<button onclick="ExecutaGuia()" id="accepta_d" >Calcula</button> 
+	</p>
+
+ <!-- Velocitat Trencanous-->
+    <br><br><br>
+	<h2>Velocitat-Trencanous<br> </h2>
+	<p>
+	<img src="vt2.jpg" alt="Dibuix Guia" width="250"> 
+	<br> Coneixem vA i vC, no coneixem &#969AB ni &#969BC <br> </p>
+	<p>	vA = (
+	<input id="vaxt" type="text" size="3" >  </input> ,
+	<input id="vayt" type="text" size="3" >  </input> , 0) 
+	m/s <br>
+	<br> rAB = (
+	<input id="rabxt" type="text" size="3"> </input> ,
+	<input id="rabyt" type="text" size="3"> </input> , 0)
+	m <br><br>
+		vB = (
+	<input id="vcxt" type="text" size="3" >  </input> ,
+	<input id="vcyt" type="text" size="3" >  </input> , 0) 
+	m/s <br>
+	<br> rCB = (
+	<input id="rcbxt" type="text" size="3"> </input> ,
+	<input id="rcbyt" type="text" size="3"> </input> , 0)
+	m <br><br>	
+	
+	
+	
+	<button onclick="ExecutaTrencanous()" id="accepta_d" >Calcula</button> 
+	</p>
+	
+
+ <!-- Acceleració Directe-->
+    <br><br><br>
+	<h2>Acceleració-Directe <br> </h2>
+	<p>
+	<br> Coneixem aA, &#949AB i &#969AB <br> </p>
+	<p>	aA = (
+	<input id="axd" type="text" size="3" >  </input> ,
+	<input id="ayd" type="text" size="3" >  </input> , 0) 
+	m/s² <br><br>
+	&#949AB = (0, 0, 
+	<input id="eabd" type="text" size="3"> </input> ) rad/s²
+	
+	<br><br> rAB = (
+	<input id="rabxda" type="text" size="3"> </input> ,
+	<input id="rabyda" type="text" size="3"> </input> , 0)
+	m <br><br>
+	
+	&#969AB = (0, 0, 
+	<input id="wabd" type="text" size="3"> )</input> rad/s
+	<br><br> 	
+	<button onclick="ExecutaDirecteAcceleracio()" id="accepta_d" >Calcula</button> 
+	</p>
+
+
+	
+	 <!-- Acceleració Guia-->
+    <br><br><br>
+	<h2>Acceleració-Guia <br> </h2>
+	<p>
+	<br> Coneixem aA, &#949AB i l'angle de la guia amb la horitzontal &#952<br> </p>
+	<p>	aA = (
+	<input id="axg" type="text" size="3" >  </input> ,
+	<input id="ayg" type="text" size="3" >  </input> , 0) 
+	m/s² <br><br>
+	
+	&#952 =  
+	<input id="angg" type="text" size="3"> 	</input> º
+	<br><br> rAB = (
+	<input id="rabxga" type="text" size="3"> </input> ,
+	<input id="rabyga" type="text" size="3"> </input> , 0)
+	m <br><br>
+	
+	&#969AB = (0, 0, 
+	<input id="wabg" type="text" size="3"> )</input> rad/s
+	<br><br> 	
+	<button onclick="ExecutaGuiaAcceleracio()" id="accepta_d" >Calcula</button> 
+	</p>
+
+
+
+
+
+ <!-- Acceleració Trencanous-->
+    <br><br><br>
+	<h2>Acceleracio-Trencanous<br> </h2>
+	<p>
+	<br> Coneixem aA, aC i &#969AB, &#969BC no coneixem &#949AB ni &#949BC <br> </p>
+	<p>	aA = (
+	<input id="aaxt" type="text" size="3" >  </input> ,
+	<input id="aayt" type="text" size="3" >  </input> , 0) 
+	m/s² <br>
+	<br> rAB = (
+	<input id="rabxta" type="text" size="3"> </input> ,
+	<input id="rabyta" type="text" size="3"> </input> , 0) <br><br> 
+	&#969AB = (0, 0, 
+	<input id="wabt" type="text" size="3"> )</input> rad/s
+	
+	<br><br>
+		aC = (
+	<input id="acxt" type="text" size="3" >  </input> ,
+	<input id="acyt" type="text" size="3" >  </input> , 0) 
+	m/s² <br>
+	<br> rCB = (
+	<input id="rcbxta" type="text" size="3"> </input> ,
+	<input id="rcbyta" type="text" size="3"> </input> , 0)
+	m <br><br>	
+	&#969CB = (0, 0, 
+	<input id="wcbt" type="text" size="3"> )</input> rad/s
+	<br><br>
+	
+	<button onclick="ExecutaTrencanousAcceleracio()" id="accepta_d" >Calcula</button> 
+	<br><br><br>
+	
+	Aula Universitària 2025
+	</p>
+
+	
+		
+		
+		
+		
+		
+		
+		
+	<script>
+	ExecutaDirecte = function(){
+		'use strict';
+		var vx=document.getElementById("vxd").value;
+		var vy=document.getElementById("vyd").value;
+		var w=document.getElementById("wzd").value;
+		var rx=document.getElementById("rabxd").value;
+		var ry=document.getElementById("rabyd").value;
+
+		var resultat,str1;
+		var vbx, vby;
+		resultat="<h2> Velocitat-Directe. Resultats </h2> <br>"
+		str1="<br> vB = vA + &#969AB <b>x</b> rAB  <br> <br>" 
+		resultat=resultat.concat(str1);
+		str1="vB = (" + vx + ", " + vy + ", 0) + " + " (0, 0, " + w + ") x (" + rx + ", " + ry + ", 0) = ";
+		resultat=resultat.concat(str1);
+		vbx= Number(vx)-Number(w*ry);
+		vby= Number(vy)+Number(w*rx);
+		str1= "(" + vbx.toFixed(3) + ", " + vby.toFixed(3) + ", 0) m/s <br> <br>";
+		resultat=resultat.concat(str1);		
+		document.write(resultat);
+			
+
+			
+		var button = document.createElement("button");
+		button.innerHTML = "Torna";
+
+		
+		var body = document.getElementsByTagName("body")[0];
+		body.appendChild(button);
+
+		button.addEventListener ("click", function() {
+		//console.log(vx);
+		location.reload();
+		});
+	}
+	
+	ExecutaGuia = function(){
+		'use strict';
+		var vx=document.getElementById("vxg").value;
+		var vy=document.getElementById("vyg").value;
+		var an=document.getElementById("ang").value;
+		var rx=document.getElementById("rabxg").value;
+		var ry=document.getElementById("rabyg").value;
+		var w,tana;
+		var resultat,str1;
+		var vbx, vby;
+		resultat="<h2> Velocitat-Guia. Resultats </h2> <br>"
+		str1="<br> vB = vA + &#969AB <b>x</b> rAB  <br> <br>" 
+		resultat=resultat.concat(str1);
+		str1="vB = (" + vx + ", " + vy + ", 0) + " + " (0, 0, &#969AB ) x (" + rx + ", " + ry + ", 0) = ";
+		resultat=resultat.concat(str1);
+		vbx= Number(vx)+ "+" + (-Number(ry)) + "·&#969AB";
+		vby= Number(vy)+ "+" + (Number(rx)) + "·&#969AB";
+		str1= "(" + vbx + ", " + vby + ", 0)";
+		resultat=resultat.concat(str1);	
+		
+		if	(an==0 || an==180 || an==(-180)){
+		str1= "<br> Guia horitzontal <br>";
+		resultat=resultat.concat(str1);	
+		str1="Imposem que la component y de la velocitat = 0 <br>"
+		resultat=resultat.concat(str1);	
+		str1=vby + " =0 <br>"
+		resultat=resultat.concat(str1);	
+		str1="Resolem: <br>"
+		resultat=resultat.concat(str1);	
+		w=-vy/rx;
+		str1="&#969AB =" + w.toFixed(3) +" rad/s";
+		resultat=resultat.concat(str1);	
+		
+
+		}else if (an==90 || an==(-90)){
+		str1= "<br> Guia vertical <br>";
+		resultat=resultat.concat(str1);	
+		str1="Imposem que la component x de la velocitat = 0 <br>"
+		resultat=resultat.concat(str1);	
+		str1=vbx + " =0 <br>"
+		resultat=resultat.concat(str1);	
+		str1="Resolem: <br>"
+		resultat=resultat.concat(str1);	
+		w=vx/ry;
+		str1="&#969AB =" + w.toFixed(3) +" rad/s";
+		resultat=resultat.concat(str1);
+		
+		}else{
+		str1= "<br> Guia inclinada <br>";
+		resultat=resultat.concat(str1);	
+		str1="Imposem que tan(&#952)=vy/vx <br>"
+		resultat=resultat.concat(str1);	
+		
+		str1="Resolem: <br>"
+		resultat=resultat.concat(str1);					
+		tana=Math.tan(an*2*3.1415926535/360)
+    	console.log(tana);
+		w=(tana*vx - vy)/((ry*tana) + Number((rx)));
+		console.log(w);
+		
+		str1="&#969AB =" + w.toFixed(3) +" rad/s";
+		resultat=resultat.concat(str1);	
+		
+		}
+		vbx= Number(vx)-Number(w*ry);
+		vby= Number(vy)+Number(w*rx);
+		str1= "<br> vB=(" + vbx.toFixed(3) + ", " + vby.toFixed(3) + ", 0) m/s <br> <br>";	
+		
+	
+		
+		resultat=resultat.concat(str1);		
+		document.write(resultat);
+			
+
+			
+		var button = document.createElement("button");
+		button.innerHTML = "Torna";
+
+		
+		var body = document.getElementsByTagName("body")[0];
+		body.appendChild(button);
+
+		button.addEventListener ("click", function() {
+		//console.log(vx);
+		location.reload();
+		});
+	}
+	
+	ExecutaTrencanous = function(){
+		'use strict';
+		var vax=document.getElementById("vaxt").value;
+		var vay=document.getElementById("vayt").value;
+		var vcx=document.getElementById("vcxt").value;
+		var vcy=document.getElementById("vcyt").value;
+		var rabx=document.getElementById("rabxt").value;
+		var raby=document.getElementById("rabyt").value;
+		var rcbx=document.getElementById("rcbxt").value;
+		var rcby=document.getElementById("rcbyt").value;
+		var wab,wcb
+		var resultat,str1;
+		var vbx1, vby1, vbx2,vby2;
+		resultat="<h2> Velocitat-Trencanous. Resultats </h2> <br>"
+		str1="<br> vB1 = vA + &#969AB <b>x</b> rAB  <br>" 
+		resultat=resultat.concat(str1);
+		str1="vB1 = (" + vax + ", " + vay + ", 0) + " + " (0, 0, &#969AB ) x (" + rabx + ", " + raby + ", 0) = ";
+		resultat=resultat.concat(str1);
+		vbx1= Number(vax)+ "+" + (-Number(raby)) + "·&#969AB";
+		vby1= Number(vay)+ "+" + (Number(rabx)) + "·&#969AB";
+		str1= "(" + vbx1 + ", " + vby1 + ", 0)";
+		resultat=resultat.concat(str1);	
+		
+		str1="<br> vB2 = vC + &#969CB <b>x</b> rCB  <br>" 
+		resultat=resultat.concat(str1);
+		str1="vB2 = (" + vcx + ", " + vcy + ", 0) + " + " (0, 0, &#969CB ) x (" + rcbx + ", " + rcby + ", 0) = ";
+		resultat=resultat.concat(str1);
+		vbx2= Number(vcx)+ "+" + (-Number(rcby)) + "·&#969CB";
+		vby2= Number(vcy)+ "+" + (Number(rcbx)) + "·&#969CB";
+		str1= "(" + vbx2 + ", " + vby2 + ", 0)";
+		resultat=resultat.concat(str1);	
+
+		
+		str1= "<br> Imposem que vB1=vB2, component a component <br>";
+		resultat=resultat.concat(str1);	
+		str1="eq1:   " + vbx1 + " = " + vbx2 + "<br>"
+		resultat=resultat.concat(str1);	
+		str1="eq2:   " + vby1 + " = " + vby2 + "<br>"
+		resultat=resultat.concat(str1);	
+		str1="Resolem: <br>"
+		resultat=resultat.concat(str1);	
+		wab = -(rcbx*vax - rcbx*vcx + Number(rcby*vay) - rcby*vcy)/(rabx*rcby - raby*rcbx);
+		wcb=-(rabx*vax - rabx*vcx + Number(raby*vay) - raby*vcy)/(rabx*rcby - raby*rcbx)
+		
+		str1="&#969AB =" + wab.toFixed(3) +" rad/s <br>";
+		resultat=resultat.concat(str1);			
+		str1="&#969CB =" + wcb.toFixed(3) +" rad/s <br>";
+		resultat=resultat.concat(str1);	
+		
+		vbx1= Number(vax)-Number(wab*raby);
+		vby1= Number(vay)+Number(wab*rabx);
+		str1= "<br> vB=(" + vbx1.toFixed(3) + ", " + vby1.toFixed(3) + ", 0) m/s <br> <br>";	
+		
+	
+		
+		resultat=resultat.concat(str1);		
+		document.write(resultat);
+			
+
+			
+		var button = document.createElement("button");
+		button.innerHTML = "Torna";
+
+		
+		var body = document.getElementsByTagName("body")[0];
+		body.appendChild(button);
+
+		button.addEventListener ("click", function() {
+		location.reload();
+		});
+	}
+
+	ExecutaDirecteAcceleracio = function(){
+		'use strict';
+		var ax=document.getElementById("axd").value;
+		var ay=document.getElementById("ayd").value;
+		var e=document.getElementById("eabd").value;
+		var w=document.getElementById("wabd").value;
+		var rx=document.getElementById("rabxda").value;
+		var ry=document.getElementById("rabyda").value;
+
+		var resultat,str1;
+		var abx, aby;
+		resultat="<h2> Acceleració-Directe. Resultats </h2> <br>"
+		str1="<br> aB = aA + &#949AB <b>x</b> rAB -  &#949AB²·rAB <br>" 
+		resultat=resultat.concat(str1);
+		str1="aB = (" + ax + ", " + ay + ", 0) + " + " (0, 0, " + e + ") x (" + rx + ", " + ry + ", 0) - " + w + "²·(" + rx + ", " + ry + ", 0)";
+		resultat=resultat.concat(str1);
+		abx= Number(ax)-Number(e*ry)-Number(w*w*rx);
+		aby= Number(ay)+Number(e*rx)-Number(w*w*ry);
+		str1= "<br>aB = (" + abx.toFixed(3) + ", " + aby.toFixed(3) + ", 0) m/s² <br> <br>";
+		resultat=resultat.concat(str1);	
+		document.write(resultat);
+			
+
+			
+		var button = document.createElement("button");
+		button.innerHTML = "Torna";
+
+		
+		var body = document.getElementsByTagName("body")[0];
+		body.appendChild(button);
+
+		button.addEventListener ("click", function() {
+		location.reload();
+		});
+	}
+	
+	ExecutaGuiaAcceleracio = function(){
+		'use strict';
+		var ax=document.getElementById("axg").value;
+		var ay=document.getElementById("ayg").value;
+		var an=document.getElementById("angg").value;
+		var rx=document.getElementById("rabxga").value;
+		var ry=document.getElementById("rabyga").value;
+		var w=document.getElementById("wabg").value;
+		var tana,e;
+		var resultat,str1;
+		var abx, aby;
+		resultat="<h2> Acceleració-Guia. Resultats </h2> <br>"
+		str1="<br> aB = aA + &#949AB <b>x</b> rAB -  &#949AB²·rAB <br>" 
+		resultat=resultat.concat(str1);
+		str1="aB = (" + ax + ", " + ay + ", 0) + " + " (0, 0, &#949AB) x (" + rx + ", " + ry + ", 0) - " + w + "²·(" + rx + ", " + ry + ", 0) = ";
+		resultat=resultat.concat(str1);
+		abx= Number(ax)- Number(w*w*rx)+ "+" + (-Number(ry)) + "·&#949AB";
+		aby= Number(ay)- Number(w*w*ry)+ "+" + (Number(rx)) + "·&#949AB";
+		str1= "(" + abx + ", " + aby + ", 0)";
+		resultat=resultat.concat(str1);	
+		
+		if	(an==0 || an==180 || an==(-180)){
+		str1= "<br> Guia horitzontal <br>";
+		resultat=resultat.concat(str1);	
+		str1="Imposem que la component y de l'acceleració = 0 <br>"
+		resultat=resultat.concat(str1);	
+		str1=aby + " =0 <br>"
+		resultat=resultat.concat(str1);	
+		str1="Resolem: <br>"
+		resultat=resultat.concat(str1);	
+		e=-(-w*w*ry + Number(ay))/rx;
+		str1="&#949AB =" + e.toFixed(3) +" rad/s²";
+		resultat=resultat.concat(str1);	
+		
+
+		}else if (an==90 || an==(-90)){
+		str1= "<br> Guia vertical <br>";
+		resultat=resultat.concat(str1);	
+		str1="Imposem que la component x de l'acceleració = 0 <br>"
+		resultat=resultat.concat(str1);	
+		str1=abx + " =0 <br>"
+		resultat=resultat.concat(str1);	
+		str1="Resolem: <br>"
+		resultat=resultat.concat(str1);	
+		e=(-w*w*rx + Number(ax))/ry
+		str1="&#949AB =" + e.toFixed(3) +" rad/s²";
+		resultat=resultat.concat(str1);
+		
+		}else{
+		str1= "<br> Guia inclinada <br>";
+		resultat=resultat.concat(str1);	
+		str1="Imposem que tan(&#952)=ay/ax <br>"
+		resultat=resultat.concat(str1);	
+		
+		str1="Resolem: <br>"
+		resultat=resultat.concat(str1);					
+		tana=Math.tan(an*2*3.1415926535/360)
+    	e=(-w*w*rx*tana + Number(w*w*ry) + Number(ax*tana) - ay)/(ry*tana + Number(rx))
+		str1="&#949AB =" + e.toFixed(3) +" rad/s²";
+		resultat=resultat.concat(str1);	
+		
+		}
+		abx= Number(ax)-Number(e*ry)-Number(w*w*rx);
+		aby= Number(ay)+Number(e*rx)-Number(w*w*ry);
+		str1= "<br> aB=(" + abx.toFixed(3) + ", " + aby.toFixed(3) + ", 0) m/s² <br> <br>";	
+		
+	
+		
+		resultat=resultat.concat(str1);		
+		document.write(resultat);
+			
+
+			
+		var button = document.createElement("button");
+		button.innerHTML = "Torna";
+
+		
+		var body = document.getElementsByTagName("body")[0];
+		body.appendChild(button);
+
+		button.addEventListener ("click", function() {
+		location.reload();
+		});
+	}
+
+	ExecutaTrencanousAcceleracio = function(){
+		'use strict';
+		var aax=document.getElementById("aaxt").value;
+		var aay=document.getElementById("aayt").value;
+		var acx=document.getElementById("acxt").value;
+		var acy=document.getElementById("acyt").value;
+		var rabx=document.getElementById("rabxta").value;
+		var raby=document.getElementById("rabyta").value;
+		var rcbx=document.getElementById("rcbxta").value;
+		var rcby=document.getElementById("rcbyta").value;
+		var wab=document.getElementById("wabt").value;
+		var wcb=document.getElementById("wcbt").value;
+		var resultat,str1;
+		var abx1, aby1, abx2,aby2,abx,aby;
+		var eab,ecb;
+		resultat="<h2> Acceleració-Trencanous. Resultats </h2> <br>"
+		str1="<br> aB1 = aA + &#949AB <b>x</b> rAB -  &#969AB²·rAB <br>" 
+		resultat=resultat.concat(str1);
+		str1="aB1 = (" + aax + ", " + aay + ", 0) + " + " (0, 0, &#949AB) x (" + rabx + ", " + raby + ", 0) - " + wab + "²·(" + rabx + ", " + raby + ", 0) = ";
+		resultat=resultat.concat(str1);
+		abx1= Number(aax)- Number(wab*wab*rabx)+ "+" + (-Number(raby)) + "·&#949AB";
+		aby1= Number(aay)- Number(wab*wab*raby)+ "+" + (Number(rabx)) + "·&#949AB";
+		str1= "(" + abx1 + ", " + aby1 + ", 0)";
+		resultat=resultat.concat(str1);	
+		str1="<br> aB2 = aC + &#949CB <b>x</b> rCB -  &#969CB²·rCB <br>" 
+		resultat=resultat.concat(str1);
+		str1="aB2 = (" + acx + ", " + acy + ", 0) + " + " (0, 0, &#949CB) x (" + rcbx + ", " + rcby + ", 0) - " + wcb + "²·(" + rcbx + ", " + rcby + ", 0) = ";
+		resultat=resultat.concat(str1);
+		abx2= Number(acx)- Number(wcb*wcb*rcbx)+ "+" + (-Number(rcby)) + "·&#949CB";
+		aby2= Number(acy)- Number(wcb*wcb*rcby)+ "+" + (Number(rcbx)) + "·&#949CB";
+		str1= "(" + abx2 + ", " + aby2 + ", 0)";
+		resultat=resultat.concat(str1);	
+		
+		str1= "<br> Imposem que aB1=aB2, component a component <br>";
+		resultat=resultat.concat(str1);	
+		str1="eq1:   " + abx1 + " = " + abx2 + "<br>"
+		resultat=resultat.concat(str1);	
+		str1="eq2:   " + aby1 + " = " + aby2 + "<br>"
+		resultat=resultat.concat(str1);	
+		str1="Resolem: <br>"
+		resultat=resultat.concat(str1);					
+		eab=-(-rabx*rcbx*wab*wab - raby*rcby*wab*wab + Number(rcbx*rcbx*wcb*wcb) + Number(rcby*rcby*wcb*wcb) + Number(aax*rcbx) + Number(aay*rcby) - acx*rcbx - acy*rcby)/(rabx*rcby - raby*rcbx);
+		ecb=-(-rabx*rabx*wab*wab + Number(rabx*rcbx*wcb*wcb) - raby*raby*wab*wab + Number(raby*rcby*wcb*wcb) + Number(aax*rabx) + Number(aay*raby) - acx*rabx - acy*raby)/(rabx*rcby - raby*rcbx);
+		
+		
+		
+		str1="&#949AB =" + eab.toFixed(3) +" rad/s² <br>";
+		resultat=resultat.concat(str1);	
+		str1="&#949CB =" + ecb.toFixed(3) +" rad/s²";
+		resultat=resultat.concat(str1);	
+		
+		
+		abx= Number(aax)-Number(eab*raby)-Number(wab*wab*rabx);
+		aby= Number(aay)+Number(eab*rabx)-Number(wab*wab*raby);
+		str1= "<br> aB=(" + abx.toFixed(3) + ", " + aby.toFixed(3) + ", 0) m/s² <br> <br>";	
+		
+	
+		
+		resultat=resultat.concat(str1);		
+		document.write(resultat);
+			
+
+			
+		var button = document.createElement("button");
+		button.innerHTML = "Torna";
+
+		
+		var body = document.getElementsByTagName("body")[0];
+		body.appendChild(button);
+
+		button.addEventListener ("click", function() {
+		location.reload();
+		});
+	}
+	
+	
+	
+	</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>
+
+
+
